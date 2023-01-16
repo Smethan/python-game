@@ -1,0 +1,22 @@
+{
+	"Intro": {
+		"text": "Hello there adventurer! You find yourself in a tavern in the wild west, would you like to go to the bar or out the door?",
+		"choices": ["Bar", "Door"]
+	},
+	"Bar": {
+		"text": "You go to the bar and sit down to order a drink, what will you order?",
+		"choices": ["Water", "Beer"]
+	},
+	"Door": {
+		"text": "You walk out the door, you win!",
+		"choices": ["gameOver"]
+	},
+	"Water": {
+		"text": "You order a water and down it in one gulp, You die of dysentry a week later. Game Over",
+		"choices": ["gameOver"]
+	},
+	"Beer": {
+		"text": "You order a beer and sip on it for a while, before you begin to feel ill. The beer was poisoned, Game Over.",
+		"choices": ["gameOver"]
+	}
+}
