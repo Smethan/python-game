@@ -1,5 +1,12 @@
 import json as js
+from art import *
 import logging
+import os
+
+
+def cls():
+    os.system("cls" if os.name == "nt" else "clear")
+
 
 logging.basicConfig(
     filename="log.txt",
@@ -21,7 +28,8 @@ class Game:
         while self.gameOver != True:
             self.location = self.step(mapFile[self.location])
             logging.info(f"loading location {self.location}")
-        if input("Would you like to restart? (Yes or No): ").lower() == "yes":
+        tprint("GG", font="block")
+        if input("\nWould you like to restart? (Yes or No): ").lower() == "yes":
             logging.warning("restarting game")
             self.gameOver = False
             self.gameLoop()
@@ -30,6 +38,7 @@ class Game:
             return
 
     def step(self, object):
+        cls()
         print("\n", object["text"], "\n")
         if object["choices"].count("gameOver") > 0:
             self.gameOver = True

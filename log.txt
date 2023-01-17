@@ -38,3 +38,19 @@
 09:41:03,85 root INFO loading location Water
 09:41:03,85 root INFO loading location None
 09:41:05,280 root WARNING exiting game
+09:58:02,516 root INFO Map loaded, 5 node(s) loaded.
+09:58:32,133 root INFO Map loaded, 5 node(s) loaded.
+09:58:34,201 root INFO loading location Bar
+09:58:35,636 root INFO loading location Water
+09:58:35,636 root INFO loading location None
+09:59:07,267 root WARNING exiting game
+09:59:08,634 root INFO Map loaded, 5 node(s) loaded.
+09:59:12,934 root INFO loading location Bar
+09:59:16,303 root INFO loading location Water
+09:59:16,303 root INFO loading location None
+10:00:17,168 root WARNING exiting game
+10:01:39,630 root INFO Map loaded, 5 node(s) loaded.
+10:01:43,96 root INFO loading location Bar
+10:01:48,16 root INFO loading location Water
+10:01:48,26 root INFO loading location None
+10:01:57,220 root WARNING exiting game
