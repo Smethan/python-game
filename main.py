@@ -37,7 +37,7 @@ def step(object):
         return
     for idx, i in enumerate(object["choices"]):
         print(f"{idx + 1}. {i}")
-    value = input("\nEnter your choice (case sensitive): ")
+    value = input("\nEnter your choice (Case Sensitive): ")
     while object["choices"].count(value) == 0:
         value = input("Invalid input, try again: ")
     return value

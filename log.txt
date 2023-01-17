@@ -24,3 +24,11 @@
 08:53:14,869 root INFO loading location Door
 08:53:14,869 root INFO loading location None
 08:53:17,389 root WARNING exiting game
+08:57:58,139 root INFO Map loaded, 5 node(s) loaded.
+09:02:32,391 root INFO Map loaded, 5 node(s) loaded.
+09:02:34,716 root INFO loading location bar
+09:03:17,695 root INFO Map loaded, 5 node(s) loaded.
+09:03:19,410 root INFO loading location Bar
+09:03:24,429 root INFO loading location Water
+09:03:24,429 root INFO loading location None
+09:03:30,249 root WARNING exiting game
