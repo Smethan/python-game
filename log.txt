@@ -1,0 +1,26 @@
+08:50:22,475 root INFO Map loaded, 5 node(s) loaded.
+08:50:27,670 root INFO loading location Bar
+08:50:30,19 root INFO loading location Water
+08:50:30,19 root INFO loading location None
+08:50:43,773 root WARNING exiting game
+08:51:24,370 root INFO Map loaded, 5 node(s) loaded.
+08:51:28,572 root INFO loading location Bar
+08:51:30,918 root INFO loading location Water
+08:51:30,919 root INFO loading location None
+08:51:36,21 root WARNING restarting game
+08:51:36,21 root INFO Map loaded, 5 node(s) loaded.
+08:51:39,81 root WARNING restarting game
+08:51:39,81 root INFO Map loaded, 5 node(s) loaded.
+08:52:17,281 root INFO Map loaded, 5 node(s) loaded.
+08:52:18,742 root INFO loading location Bar
+08:52:20,248 root INFO loading location Water
+08:52:20,249 root INFO loading location None
+08:53:05,412 root INFO Map loaded, 5 node(s) loaded.
+08:53:07,587 root INFO loading location Bar
+08:53:09,108 root INFO loading location Water
+08:53:09,109 root INFO loading location None
+08:53:11,430 root WARNING restarting game
+08:53:11,431 root INFO Map loaded, 5 node(s) loaded.
+08:53:14,869 root INFO loading location Door
+08:53:14,869 root INFO loading location None
+08:53:17,389 root WARNING exiting game
