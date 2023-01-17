@@ -32,3 +32,9 @@
 09:03:24,429 root INFO loading location Water
 09:03:24,429 root INFO loading location None
 09:03:30,249 root WARNING exiting game
+09:30:36,531 root INFO Map loaded, 5 node(s) loaded.
+09:40:58,10 root INFO Map loaded, 5 node(s) loaded.
+09:41:00,994 root INFO loading location Bar
+09:41:03,85 root INFO loading location Water
+09:41:03,85 root INFO loading location None
+09:41:05,280 root WARNING exiting game
