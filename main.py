@@ -25,6 +25,7 @@ class Game:
         self.prevLoc = ""
         self.HP = 10
         self.inventory = []
+        self.speed = 2
 
     def gameLoop(self):
         mapFile = js.load(open("map.json"))
@@ -58,11 +59,12 @@ class Game:
                     return
 
     def move(self, loc):
+        cls()
         print("\n", loc["text"], "\n")
         if "gameOver" in loc["choices"].keys():
             self.gameOver = True
             return
-        if loc["item"]:
+        if "item" in loc.keys():
             self.inventory.append(loc["item"])
             print(f"You acquired {loc['item']['name']}!\n")
             del loc["item"]
@@ -78,6 +80,7 @@ class Game:
         health = enemy["health"]
         atk = enemy["atk"]
         name = enemy["name"]
+        speed = enemy["speed"]
         blocking = False
         options = {
             "atk": "ATTACK (5 DMG)",
@@ -85,16 +88,20 @@ class Game:
             "def": "BLOCK (-2 DMG TAKEN)",
             "run": "RUN",
         }
-        turn = 0
+        playerTurns = 1 if speed > self.speed else 1 + (self.speed - speed)
+        enemyTurns = 1 if self.speed > speed else 1 + (speed - self.speed)
+        ptc = playerTurns
+        etc = enemyTurns
         tprint("BATTLE START")
         sleep(1)
-        print(f"You encounter a {name}!\n")
+        print(f"You encounter a(n) {name}!\n")
         sleep(1)
         while health > 0 and self.HP > 0:
-            while turn == 0:
+            while ptc > 0 and health > 0 and self.HP > 0:
                 cls()
                 print(f"Enemy Health: {health}")
                 print(f"Your Health: {self.HP}")
+                print(f"Your Turns: {ptc}")
                 for idx, i in enumerate(options.values()):
                     print(f"{idx + 1}. {i}")
                 value = input("Enter your choice (atk, def, inv, run): ")
@@ -106,11 +113,11 @@ class Game:
                     case "atk":
                         print("You attack the enemy, doing 5 damage!")
                         health -= 5
-                        turn = 1
+                        ptc -= 1
                     case "def":
                         blocking = True
                         print("You take a defensive stance...")
-                        turn = 1
+                        ptc -= 1
                     case "inv":
                         cls()
                         for idx, i in enumerate(self.inventory):
@@ -132,14 +139,14 @@ class Game:
                         )
                         print(f'You recover {item["power"]} HP!')
                         self.HP += item["power"]
-                        turn = 1
+                        ptc -= 1
                     case "run":
                         print("You run away...")
                         sleep(1)
                         return "run"
 
             sleep(2)
-            if turn == 1 and health > 0:
+            while etc > 0 and health > 0:
                 if blocking == True:
                     if atk - 2 <= 0:
                         damage = 0
@@ -152,7 +159,9 @@ class Game:
                 print(f"You take {damage} points of damage")
                 sleep(1)
                 self.HP -= damage
-                turn = 0
+                etc -= 1
+            ptc = playerTurns
+            etc = enemyTurns
         if self.HP <= 0:
             return "gg"
         elif health <= 0:

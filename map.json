@@ -2,11 +2,25 @@
 	"Intro": {
 		"text": "Hello there adventurer! Welcome to the dungeon, will you go left or right?",
 		"item": { "name": "Pie", "type": "Healing", "power": 5 },
-		"choices": { "left": "Boss Room 1", "right": "Debug" }
+		"choices": { "left": "Boss Room 1", "right": "Bridge" }
 	},
 	"Boss Room 1": {
-		"text": "You won! congrats!",
-		"enemy": { "health": 10, "atk": 1, "name": "Grug" },
-		"choices": { "gameOver": "" }
+		"text": "You stand in a room with the remnants of the skeleton you just defeated, a large door opens to your left",
+		"enemy": { "health": 5, "atk": 1, "name": "Skeleton", "speed": 2 },
+		"choices": { "left": "Bridge" }
+	},
+	"Bridge": {
+		"text": "A room with water running under a large bridge, across it the path splits into three. You feel an ominous wind coming from the middle door",
+		"item": { "name": "Health Potion", "type": "Healing", "power": 15 },
+		"choices": { "left": "Room 3", "middle": "Boss Room 2", "right": "Treasure Room" }
+	},
+	"Room 3": {
+		"text": "A very uninteresting room, its a dead end. At least you found some Bandages",
+		"item": { "name": "Bandages", "type": "Healing", "power": 5 },
+		"choices": { "back": "Bridge" }
+	},
+	"Boss Room 2": {
+		"text": "You beat the Ogre, but something didn't seem right, he already looked dead... Some stairs are found to your right, it smells of rot and decay",
+		"enemy": { "health": 30, "atk": 10, "name": "Ogre", "speed": 1 }
 	}
 }
