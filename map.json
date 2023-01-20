@@ -1,6 +1,6 @@
 {
 	"Intro": {
-		"text": "Hello there adventurer! Welcome to the dungeon, will you go left or right?",
+		"text": "Hello there adventurer! You've come to this dungeon seeking gold or glory, will you go left or right?",
 		"item": { "name": "Pie", "type": "Healing", "power": 5 },
 		"choices": { "left": "Boss Room 1", "right": "Bridge" }
 	},
@@ -10,17 +10,27 @@
 		"choices": { "left": "Bridge" }
 	},
 	"Bridge": {
-		"text": "A room with water running under a large bridge, across it the path splits into three. You feel an ominous wind coming from the middle door",
+		"text": "A room with water running under a large bridge, across it the path splits into three. You feel an ominous wind coming from the middle door, and on the right there are some stairs",
 		"item": { "name": "Health Potion", "type": "Healing", "power": 15 },
 		"choices": { "left": "Room 3", "middle": "Boss Room 2", "right": "Treasure Room" }
 	},
 	"Room 3": {
 		"text": "A very uninteresting room, its a dead end. At least you found some Bandages",
-		"item": { "name": "Bandages", "type": "Healing", "power": 5 },
+		"item": { "name": "Bandages", "type": "Healing", "power": 10 },
 		"choices": { "back": "Bridge" }
 	},
 	"Boss Room 2": {
 		"text": "You beat the Ogre, but something didn't seem right, he already looked dead... Some stairs are found to your right, it smells of rot and decay",
-		"enemy": { "health": 30, "atk": 10, "name": "Ogre", "speed": 1 }
+		"enemy": { "health": 30, "atk": 10, "name": "Ogre", "speed": 1 },
+		"choices": { "stairs": "Final Boss Room" }
+	},
+	"Treasure Room": {
+		"text": "You found a massive hoard of treasure! You win!",
+		"choices": { "gameOver": "" }
+	},
+	"Final Boss Room": {
+		"text": "The Necromancer lays dead, finally put to rest. A glimmering door of solid gold is partially open in the back of the room",
+		"enemy": { "health": 50, "atk": 10, "name": "Necromancer", "speed": 3 },
+		"choices": { "door": "Treasure Room" }
 	}
 }
