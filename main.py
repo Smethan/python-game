@@ -192,7 +192,7 @@ class Game:
                         if ivalue.lower() == "back":
                             # return player to previous menu without ticking turn counter
                             logging.info("returning to previous menu...")
-                            break
+                            continue
 
                         while not any(
                             i["name"].lower() == ivalue.lower() for i in self.inventory
