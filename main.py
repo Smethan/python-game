@@ -18,6 +18,38 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
+# JSON FORMAT (build your own game)
+    # (This is only here because I can't comment in json files...)
+
+    # All child object properties are required if a child object is present (i.e, no empty enemy or item object, just dont add them if you don't need them)
+    # refer to map.json for example
+
+    # "Name" : {
+    #   "text" : "test",
+    #   "item" : {"name": "testItem", "type": "Healing/Damage/Buff", "power": 1},
+    #   "enemy" : {"name": "test enemy", "health": 1, "atk": 1, "speed": 1},
+    #   "choices" : {"choice1": "location1"}
+    # }
+    # Name: location name, should be in the choices section of another location, or be init (string)
+    # text: displayed after entering room or after enemy encounter (string)
+    # item: object (optional)
+    #   name: item name (string)
+    #   type: type of item, can be either Healing, Damage, Buff (string)
+    #   power: strength of item (int)
+    # enemy: object (optional)
+    #   name: enemy name (string)
+    #   health: how much health the enemy has (int)
+    #   speed: how fast the enemy is, determines how many turns it or the player get (int)
+    # choices: object containing next locations
+    #   choice1: can be any name, what a player enter into the text box and what is checked for input validation (string)
+    #   location1: where the player actually goes, must be another key in the json (string)
+
+    # set choice1 to "gameOver" and location1 to an empty string to end the game upon entering that area
+
+
+
+
+# TODO: split up input handling into its own function
 # the big class
 class Game:
     # initialize required variables
