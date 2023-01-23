@@ -11,7 +11,7 @@ def cls():
 
 logging.basicConfig(
     filename="log.txt",
-    filemode="a",
+    filemode="w",
     format="%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s",
     datefmt="%H:%M:%S",
     level=logging.DEBUG,
@@ -65,6 +65,7 @@ class Game:
             self.gameOver = True
             return
         if "item" in loc.keys():
+            logging.info(f'found {loc["item"]["name"]}, adding to inventory')
             self.inventory.append(loc["item"])
             print(f"You acquired {loc['item']['name']}!\n")
             del loc["item"]
@@ -112,35 +113,46 @@ class Game:
                 match value:
                     case "atk":
                         print("You attack the enemy, doing 5 damage!")
+                        logging.info("player attacked enemy")
                         health -= 5
                         ptc -= 1
                     case "def":
                         blocking = True
                         print("You take a defensive stance...")
+                        logging.info("player defended")
                         ptc -= 1
                     case "inv":
                         cls()
+                        logging.info("player selected inventory")
                         for idx, i in enumerate(self.inventory):
                             print(f'{idx + 1}. {i["name"]}: +{i["power"]} HP')
                         ivalue = input(
                             "What item would you like to use (back to return to previous menu): "
                         )
                         if ivalue.lower() == "back":
+                            logging.info("returning to previous menu...")
                             break
 
                         while not any(
                             i["name"].lower() == ivalue.lower() for i in self.inventory
                         ):
+                            logging.warning(
+                                "invalid input recieved, requesting input again..."
+                            )
                             ivalue = input("Invalid option, try again: ")
                         item = next(
                             item
                             for item in self.inventory
                             if item["name"].lower() == ivalue.lower()
                         )
+                        logging.info(f'item {item["name"]} found')
                         print(f'You recover {item["power"]} HP!')
                         self.HP += item["power"]
                         ptc -= 1
                     case "run":
+                        logging.info(
+                            f"player selected run, returning to {self.prevLoc}"
+                        )
                         print("You run away...")
                         sleep(1)
                         return "run"
@@ -163,8 +175,10 @@ class Game:
             ptc = playerTurns
             etc = enemyTurns
         if self.HP <= 0:
+            logging.warning("player has died, rip")
             return "gg"
         elif health <= 0:
+            logging.info("enemy slain, removing from room...")
             return "victory"
 
 
